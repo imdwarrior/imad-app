@@ -47,12 +47,13 @@ function createTemplate(data){
 	var date = data.date;
 	var heading = data.heading;
 	var content = data.content;
+	
 	var htmlTemplate = `
 	<html>
 	<head>
 	    <link href=style.css rel="stylesheet"/>
 	        <title>
-	         ${t}
+	         ${title}
 	        </title>
 	    </head>
 	    <body>
@@ -61,14 +62,14 @@ function createTemplate(data){
 	    </div>
 	    <hr/>
 	    <h3>
-	        ${h}
+	        ${heading}
 	    </h3>
 	    <div>
-	        ${d}
+	        ${date}
 	    </div>
 	    <div>
 	    <p>
-	         ${c}
+	         ${content}
 	    </p>
 	    </div>
 	    </body>
