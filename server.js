@@ -2,6 +2,10 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 
+var app = express();
+app.use(morgan('combined'));
+
+
  var articles = {
 	 'article-one' : {
 		title	 :  'Article One | Mohit' ,
@@ -74,25 +78,15 @@ function createTemplate(data){
 	return htmlTemplate;
 }
 
-var app = express();
-app.use(morgan('combined'));
-
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 app.get('/:articleName', function (req, res){
+ //aticleName == article-one
+ //(articles[articleName]) == thw {} object of article one
+ var articleName = req.param.articleName;
  res.send(createTemplate(articles[articleName])); 
 });
-
-var articleName = req.param.articleName;
-
-/*app.get('/article-two', function (req, res){
- res.sendFile(path.join(__dirname, 'ui', 'article-two.html')); 
-});
-app.get('/article-three', function (req, res){
- res.sendFile(path.join(__dirname, 'ui', 'article-three.html')); 
-});
-*/
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
