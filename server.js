@@ -43,10 +43,10 @@ app.use(morgan('combined'));
 
 
 function createTemplate(data){
-	var t = data.title;
-	var d = data.date;
-	var h = data.heading;
-	var c = data.content;
+	var title = data.title;
+	var date = data.date;
+	var heading = data.heading;
+	var content = data.content;
 	var htmlTemplate = `
 	<html>
 	<head>
