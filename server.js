@@ -51,7 +51,7 @@ function createTemplate(data){
 	var htmlTemplate = `
 	<html>
 	<head>
-	    <link href=/style.css rel="stylesheet"/>
+	    <link href=style.css rel="stylesheet"/>
 	        <title>
 	         ${title}
 	        </title>
@@ -85,7 +85,7 @@ app.get('/:articleName', function (req, res){
  //aticleName == article-one
  //(articles[articleName]) == thw {} object of article one
  var articleName = req.param.articleName;
- res.send(createTemplate('article-three')); 
+ res.send(createTemplate(articles['articleName'])); 
 });
 
 app.get('/ui/style.css', function (req, res) {
