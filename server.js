@@ -3,8 +3,8 @@ var morgan = require('morgan');
 var path = require('path');
 
 var articles = {
-	var 'article-one': {
-		title	 :  'Article One | Mohit' ,
+	var 'article-two' : {
+		title :  "Article One | Mohit" ,
 		date	 : 'Feb 17, 2018' , 
 		heading	:  'Article One',
 		content	 : `<p>
@@ -34,8 +34,9 @@ var articles = {
 			                    This is the content for Third Article
 			            </p>`, 
 		},
-
 };
+
+
 
 
 function createTemplate(data){
