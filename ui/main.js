@@ -4,9 +4,9 @@ var img = document.getElementById('madi');
 
     var mgl=0;
     function moveRight(){
-        mgl+=5;
+        mgl+=1;
         img.style.marginLeft = mgl + 'px';
     }
     img.onclick = function(){
-	var interval = setInterval(moveRight, 100);
+	var interval = setInterval(moveRight, 50);
 };
