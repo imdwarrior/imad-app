@@ -51,7 +51,7 @@ function createTemplate(data){
 	var htmlTemplate = `
 	<html>
 	<head>
-	    <link href=style.css rel="stylesheet"/>
+	    <link href=/style.css rel="stylesheet"/>
 	        <title>
 	         ${title}
 	        </title>
