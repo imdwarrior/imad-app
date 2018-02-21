@@ -43,16 +43,16 @@ app.use(morgan('combined'));
 
 
 function createTemplate(data){
-	var title = data.title;
-	var date = data.date;
-	var heading = data.heading;
-	var content = data.content;
+	var t = data.title;
+	var d = data.date;
+	var h = data.heading;
+	var c = data.content;
 	var htmlTemplate = `
 	<html>
 	<head>
 	    <link href=style.css rel="stylesheet"/>
 	        <title>
-	         ${title}
+	         ${t}
 	        </title>
 	    </head>
 	    <body>
@@ -61,18 +61,17 @@ function createTemplate(data){
 	    </div>
 	    <hr/>
 	    <h3>
-	        ${heading}
+	        ${h}
 	    </h3>
 	    <div>
-	        ${date}
+	        ${d}
 	    </div>
 	    <div>
 	    <p>
-	         ${content}
+	         ${c}
 	    </p>
 	    </div>
 	    </body>
-	    
 	</html>
 	`;
 	return htmlTemplate;
