@@ -16,7 +16,7 @@ var counter=0;
 var btn = document.getElementById("counter");
 btn.onclick = function(){
 
-//make a request
+//make a request 
 
 //capture a request
 
