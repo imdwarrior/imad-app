@@ -31,7 +31,7 @@ request.onreadystatechange = function() {
 	} //ignore if not done
 };
 	//make a request
-	request.open('GET','http://ask4mohitdrocker.imad.hasura-app.io/',true);
+	request.open('GET','http://ask4mohitdrocker.imad.hasura-app.io/counter',true);
 	request.send(null);
 
  };
