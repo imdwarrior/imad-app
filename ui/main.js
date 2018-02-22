@@ -12,16 +12,26 @@ var img = document.getElementById('madi');
 };
 
 //counter code
-var counter=0;
 var btn = document.getElementById("counter");
 btn.onclick = function(){
 
-//make a request 
+//create a request by using XMLHttpRequest
+var request = new XMLHttpRequest();
 
-//capture a request
+//capture a request and store it in a variable
+request.onreadystatechange = function() {
+	if(request.readyState === XMLHttpRequest,DONE)
+	{
+		if(request.status === 200){
 
-//render the variable counter in the correct span
-counter+=1;
-var span = document.getElementById("count");
-span.innerHTML = counter.toString();
+			var span = document.getElementById("count");
+			span.innerHTML = counter.toString();
+		}
+		
+	} //ignore if not done
+};
+	//make a request
+	request.open('GET','http://ask4mohitdrocker.imad.hasura-app.io/',true);
+	request.send(null);
+
  };
