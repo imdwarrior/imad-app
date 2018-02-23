@@ -92,7 +92,7 @@ app.get('/', function (req, res) {
 var names= [];
 app.get('/submit-name/:name', function (req, res) { //url: submit-name?query regarding name to do so we use query instead or params 
    
-   var name = req.query.name //also provided by xpress framework
+   var name = req.params.name //also provided by xpress framework
   
    names.push(name);
    //JSON 
