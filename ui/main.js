@@ -40,16 +40,32 @@ request.onreadystatechange = function() {
 //submit name
  var submit = document.getElementById("submit_btn");
  submit.onclick = function(){
- 	//make a request to the server and send the the names
+
+//create a request by using XMLHttpRequest
+var request = new XMLHttpRequest();
+
+//capture a request and store it in a variable
+request.onreadystatechange = function() {
+	if(request.readyState === XMLHttpRequest.DONE)
+	{
+		if(request.status === 200){
+            var names = request.responseText;
+            names = JSON.parse(names);
+		 	var list = '';
+		 	for(var i=0; i< names.length; i++){
+		 		list+= '<li>'+names[i]+'</li>' ;
+		 	}
+		 	var ul = document.getElementById('namelist');
+		 	ul.innerHTML = list;
+				}
+		
+	} //ignore if not done
+};
+	//make a request
+	//make a request to the server and send the the names
  	 var nameInput = document.getElementById('name');
     var name = nameInput.value;
 
- 	//captures the name and render it as a list
- 	var names = ['name1','name2','name3','name4'];
- 	var list = '';
- 	for(var i=0; i< names.length; i++){
- 		list+= '<li>'+names[i]+'</li>' ;
- 	}
- 	var ul = document.getElementById('namelist');
- 	ul.innerHTML = list;
- };
+	request.open('GET','http://ask4mohitdrocker.imad.hasura-app.io/submit-name?='+name, true);
+	request.send(null);
+};
