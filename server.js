@@ -84,10 +84,6 @@ app.get('/counter', function (req, res) {
   res.send(counter.toString());
 });
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
-});
-
 // we have put the code of names here since article was executing first
 var names= [];
 app.get('/submit-name', function (req, res) { //url: submit-name?query regarding name to do so we use query instead or params 
@@ -99,6 +95,9 @@ app.get('/submit-name', function (req, res) { //url: submit-name?query regarding
    res.send(JSON.stringiFy(names));
 });
 
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
 
 app.get('/:articleName', function (req, res){
  //aticleName == article-one
