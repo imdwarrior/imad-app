@@ -114,7 +114,7 @@ app.get('/submit-name/:name', function (req, res) { //url: submit-name?query reg
   
    names.push(name);
    //JSON 
-   res.send(Json.stringFy(names));
+   res.send(JSON.stringFy(names));
 });
 
 
