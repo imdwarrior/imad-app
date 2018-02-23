@@ -90,7 +90,7 @@ app.get('/counter', function (req, res) {
    var name = req.query.name; //also provided by xpress framework
    names.push(name);
    //JSON 
-   res.send(JSON.stringiFy(names));
+   res.send(JSON.stringify(names));
 });
 
 app.get('/', function (req, res) {
