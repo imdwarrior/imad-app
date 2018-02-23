@@ -36,7 +36,8 @@ request.onreadystatechange = function() {
 
  };
 
- //submit name
+
+/* //submit name
  var nameInput = document.getElementById('name');
  var name = nameInput.value;
  var submit = document.getElementById("submit_btn");
@@ -52,3 +53,4 @@ request.onreadystatechange = function() {
  	var ul = document.getElementById('namelist');
  	ul.innerHTML = list;
  };
+*/
