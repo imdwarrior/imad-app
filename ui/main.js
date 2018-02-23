@@ -43,6 +43,7 @@ request.onreadystatechange = function() {
  var submit = document.getElementById("submit_btn");
  submit.onclick = function(){
  	//make a request to the server and send the the names
+ 	
 
  	//captures the name and render it as a list
  	var names = ['name1','name2','name3','name4'];
