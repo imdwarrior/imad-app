@@ -65,7 +65,6 @@ request.onreadystatechange = function() {
 	//make a request to the server and send the the names
  	 var nameInput = document.getElementById('name');
     var name = nameInput.value;
-
-	request.open('GET','http://ask4mohitdrocker.imad.hasura-app.io/submit-name?='+name, true);
+	request.open('GET','http://ask4mohitdrocker.imad.hasura-app.io/submit-name?name='+name, true);
 	request.send(null);
 };
