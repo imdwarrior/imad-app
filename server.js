@@ -90,7 +90,7 @@ app.get('/', function (req, res) {
 
 // we have put the code of names here since article was executing first
 var names= [];
-app.get('/submit-name/:name', function (req, res) { //url: submit-name?query regarding name to do so we use query instead or params 
+app.get('/submit-name/', function (req, res) { //url: submit-name?query regarding name to do so we use query instead or params 
    
    var name = req.query.name //also provided by xpress framework
   
