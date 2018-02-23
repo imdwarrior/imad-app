@@ -84,18 +84,6 @@ app.get('/counter', function (req, res) {
   res.send(counter.toString());
 });
 
-// we have put the code of names here since article was executing first
-var names= [];
-app.get('/submit-name/:name', function (req, res) { //url: submit-name?query regarding name to do so we use query instead or params 
-   
-   var name = req.query.name //also provided by xpress framework
-  
-   names.push(name);
-   //JSON 
-   res.send(Json.stringFy(names));
-});
-
-
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -118,6 +106,16 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
+// we have put the code of names here since article was executing first
+var names= [];
+app.get('/submit-name/:name', function (req, res) { //url: submit-name?query regarding name to do so we use query instead or params 
+   
+   var name = req.query.name //also provided by xpress framework
+  
+   names.push(name);
+   //JSON 
+   res.send(Json.stringFy(names));
+});
 
 
 // Do not change port, otherwise your app won't run on IMAD servers
