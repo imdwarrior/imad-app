@@ -51,6 +51,8 @@ app.use(morgan('combined'));
 
 };
 
+var pool = new Pool(config);
+
 function createTemplate(data){
 	var title = data.title;
 	var date = data.date;
@@ -87,8 +89,6 @@ function createTemplate(data){
 	return htmlTemplate;
 }
 
-var pool = new Pool(config);
-
 var counter=0;
 app.get('/counter', function (req, res) {
 	counter+=1;
@@ -104,6 +104,10 @@ app.get('/counter', function (req, res) {
    res.send(JSON.stringify(names));
 });
 
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+});
+
 app.get('/test-db',function(req,res){
 	//make a query
 	pool.query('SELECT * FROM test',function(err,res){
@@ -115,10 +119,6 @@ app.get('/test-db',function(req,res){
 		}
 	});
 	//return a response
-});
-
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
 app.get('/:articleName', function (req, res){
