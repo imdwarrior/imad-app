@@ -119,7 +119,11 @@ app.get('/test-db',function(req,res) {
             
         } 
         else { res.send(JSON.stringify(result.rows));
-        //Because You Are Using result Here } }); });
+        //Because You Are Using result Here 
+        }
+        }); 
+    
+});
 
 /*app.get('/test-db',function(req,result){
 	//make a query
