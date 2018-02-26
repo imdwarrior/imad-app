@@ -108,15 +108,15 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/test-db',function(req,res){
+app.get('/test-db',function(req,result){
 	//make a query
 		//return a response
-	pool.query('select * from test',function(err,res){
+	pool.query('select * from test',function(err,result){
 		if(err){
-			res.status(500).send(err.toString());
+			result.status(500).send(err.toString());
 		}
 		else{
-			res.send(JSON.stringify(result.rows));
+			result.send(JSON.stringify(result.rows));
 		}
 	});
 
