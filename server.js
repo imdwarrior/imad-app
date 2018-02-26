@@ -108,7 +108,20 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/test-db',function(req,result){
+
+app.get('/test-db',function(req,res) {
+    //make a query
+    //return a response
+    pool.query('select * from test',function(err,res)
+    //Change res To result And Try
+    {
+        if(err) { res.status(500).send(err.toString()); 
+            
+        } 
+        else { res.send(JSON.stringify(result.rows));
+        //Because You Are Using result Here } }); });
+
+/*app.get('/test-db',function(req,result){
 	//make a query
 		//return a response
 	pool.query('select * from test',function(err,res){
@@ -120,7 +133,7 @@ app.get('/test-db',function(req,result){
 		}
 	});
 
-});
+});*/
 
 app.get('/:articleName', function (req, res){
  //aticleName == article-one
