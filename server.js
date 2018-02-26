@@ -111,12 +111,12 @@ app.get('/', function (req, res) {
 app.get('/test-db',function(req,result){
 	//make a query
 		//return a response
-	pool.query('select * from test',function(err,result){
+	pool.query('select * from test',function(err,res){
 		if(err){
-			result.statusCode(500).send(err.toString());
+			res.send(err.toString());
 		}
 		else{
-			result.send(JSON.stringify(result.rows));
+			res.send(JSON.stringify(result.rows));
 		}
 	});
 
