@@ -104,7 +104,7 @@ old code:  pool.query("select * from article where title='"+req.params.articleNa
  	}
  	else{
  		if(result.rows.length === 0){
- 			res.status(404).send('article not found');
+ 			res.status(404).send('Article not found');
  		}
  		else{
  		    var articleData=result.rows[0];	
