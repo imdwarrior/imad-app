@@ -130,8 +130,11 @@ app.get('/test-db',function(req,res)
 app.get('/articles/:articleName', function (req, res){
  //aticleName == article-one
  //(articles[articleName]) == thw {} object of article one
+ 
+/*to prevent sql injection as a user can do /articles/'; delete from articl where 'a'='a or any query like that we use libary funtion to use parameter inside the query
+old code:  pool.query("select * from article where title='"+req.params.articleName+"'", function(err,result){  we pass parameter as an array as asecond argument */
 
- pool.query("select * from article where title='"+req.params.articleName+"'", function(err,result){
+ pool.query("select * from article where title=$1",[req.params.articleName], function(err,result){
  	if(err){
  		res.status(500).send(err.toString());
  	}
