@@ -15,42 +15,6 @@ var config ={
 var app = express();
 app.use(morgan('combined'));
 
-
- var articles = {
-	 'article-one' : {
-		title	 :  'Article One | Mohit' ,
-		date	 : 'Feb 17, 2018' , 
-		heading	:  'Article One',
-		content	 : `<p>
-		                    This is the content for Article one This is the ontent for Article one This is the ontent for Article one This is the ontent for Article one
-		                    This is the content for Article oneThis is the ontent for Article oneThis is the ontent for Article oneThis is the ontent for Article oneThis is the ontent for Article oneThis is the ontent for Article oneThis is the ontent for Article oneThis is the ontent for Article one
-		                    
-		                </p>
-		            <p>
-		                    This is the content for Article oneThis is the ontent for Article oneThis is the ontent for Article oneThis is the ontent for Article oneThis is the ontent for Article oneThis is the ontent for Article oneThis is the ontent for Article oneThis is the ontent for Article oneThis is the ontent for Article oneThis is the ontent for Article oneThis is the ontent for Article one
-		            </p>`, 
-		},
-
-	 'article-two' : {
-			title	 :  'Article Two | Mohit' ,
-			date	 : 'Feb 18, 2018' , 
-			heading	:  'Article Two',
-			content	 : `<p>
-			                    This is the content for Second Article
-			            </p>`, 
-		},
-
-	 'article-three': {
-			title	 :  'Article Three | Mohit' ,
-			date	 : 'Feb 18, 2018' , 
-			heading	:  'Article Three',
-			content	 : `<p>
-			                    This is the content for Third Article
-			            </p>`, 
-		},
-
-};
-
 var pool = new Pool(config);
 
 function createTemplate(data){
