@@ -127,19 +127,6 @@ app.get('/test-db',function(req,res)
 
 });
 
-/*app.get('/test-db',function(req,result){
-	//make a query
-		//return a response
-	pool.query('select * from test',function(err,res){
-		if(err){
-			res.status(500).send(err.toString());
-		}
-		else{
-			res.send(JSON.stringify(result.rows));
-		}
-	});
-});*/
-
 app.get('/:articleName', function (req, res){
  //aticleName == article-one
  //(articles[articleName]) == thw {} object of article one
