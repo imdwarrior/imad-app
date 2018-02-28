@@ -60,7 +60,7 @@ function createTemplate(data){
 function hash(input, salt){
   //create a hash
   var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512 , 'sha512');
-  return ["pbkdf2", "10000", salt, hashed.toString('hex')].join($);
+  return ["pbkdf2", "10000", salt, hashed.toString('hex')].join('$');
   ///we are usinng pbkdf2Sync algo rather than hash function by node bcz of it's salt value
   // working: input+salt --> hash --> hase--> hased X 10000 times to give 512bytes string
 
@@ -71,6 +71,7 @@ app.get('/hash/:input', function(req, res){
 	res.send(hashedString);
 });
 
+<<<<<<< HEAD
 app.post('/create-user', function (req, res) {
    // username, password
    // {"username": "mohit", "password": "password"}
@@ -86,6 +87,26 @@ app.post('/create-user', function (req, res) {
           res.send('User successfully created: ' + username);
       }
    });
+=======
+app.post('/create-user', function(req,res){
+	// username and password
+	///JSON
+	var username = req.body.username;
+	var password = req.body.password;
+	var salt = crypto.randomBytes(128).toString('hex');
+	var dbString = hash(password, salt);
+	// inserting into database
+	pool.query('INSERT INTO "user" (username, password) VALUE($1, $2)', [username, dbString], function(req, result){
+			if(err)
+        {
+			res.status(500).send(err.toString());
+		}
+		else
+        {
+			res.send("User Successfully Created "+ username); 
+		}
+	});
+>>>>>>> 712427d90435966a2c2bd375cdc8d02cbfe56c5b
 });
 var counter=0;
 app.get('/counter', function (req, res) {
