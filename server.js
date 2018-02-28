@@ -106,7 +106,6 @@ app.post('/create-user', function(req,res){
 			res.send("User Successfully Created "+ username); 
 		}
 	});
->>>>>>> 712427d90435966a2c2bd375cdc8d02cbfe56c5b
 });
 var counter=0;
 app.get('/counter', function (req, res) {
