@@ -3,6 +3,7 @@ var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
 var crypto = require('crypto');
+var bodyPareser = require('body-parser');
 
 var config ={
 	user: 'ask4mohitdrocker',
@@ -15,6 +16,7 @@ var config ={
 
 var app = express();
 app.use(morgan('combined'));
+app.use(bodyPareser.json());
 
 var pool = new Pool(config);
 
@@ -58,12 +60,35 @@ function createTemplate(data){
 function hash(input, salt){
   //create a hash
   var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512 , 'sha512');
-  return hashed.toString('hex');
+  return ["pbkdf2", "10000", salt, hashed.toString('hex')].join($);
+  ///we are usinng pbkdf2Sync algo rather than hash function by node bcz of it's salt value
+  // working: input+salt --> hash --> hase--> hased X 10000 times to give 512bytes string
+
 }
 
 app.get('/hash/:input', function(req, res){
 	var hashedString = hash(req.params.input, 'random-salt');
 	res.send(hashedString);
+});
+
+app.post('/create-user', function(req,res){
+	// username and password
+	///JSON
+	var username = req.body.username;
+	var password = req.body.password;
+	var salt = crypto.RandomBytes(128).toString('hex');
+	var dbString = hash(password, salt);
+	// inserting into database
+	pool.query('INSERT INTO "user" (username, password) VALUE($1, $2)', [username, dbString] function(req, result){
+			if(err)
+        {
+			res.status(500).send(err.toString());
+		}
+		else
+        {
+			res.send("User Successfully Created "+ username); 
+		}
+	});
 });
 
 var counter=0;
