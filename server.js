@@ -60,7 +60,7 @@ function createTemplate(data){
 function hash(input, salt){
   //create a hash
   var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512 , 'sha512');
-  return ["pbkdf2", "10000", salt, hashed.toString('hex')].join($);
+  return ["pbkdf2", "10000", salt, hashed.toString('hex')].join('$');
   ///we are usinng pbkdf2Sync algo rather than hash function by node bcz of it's salt value
   // working: input+salt --> hash --> hase--> hased X 10000 times to give 512bytes string
 
