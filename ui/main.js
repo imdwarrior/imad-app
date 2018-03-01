@@ -28,7 +28,7 @@ request.onreadystatechange = function() {
  	 var password = document.getElementById('password').value;
  	 console.log('username');
  	 console.log('password');
-	request.open('POST','http://ask4mohitdrocker.imad.hasura-app.io/submit-name?name='+name, true);
-	request.setRequestHeader('Content-Type', 'application/json')
+	request.open('POST','http://ask4mohitdrocker.imad.hasura-app.io/login', true);
+	request.setRequestHeader('Content-Type', 'application/json');
 	request.send(JSON.stringify({username:username, password:password}));
 };
