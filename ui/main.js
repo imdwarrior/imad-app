@@ -15,10 +15,10 @@ request.onreadystatechange = function() {
             console.log("user logged in");
             alert("Logged in Successfully");
 				}
-			else(request.status === 403) {
+			else if(request.status === 403) {
 				alert("Username?Password is incorrect");
 			}
-			else(request.status === 500) {
+			else if (request.status === 500) {
 				alert("something went wrong");
 			}
 	} //ignore if not done
