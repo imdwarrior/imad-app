@@ -134,7 +134,7 @@ app.get('/check-login', function(req,res){
     res.send("You are logger in as "+ req.session.auth.userid.toString());
   }
   else{
-    res.send("You are not logged in");
+    res.send(" You are not logged in");
   }
 });
 
