@@ -104,7 +104,7 @@ app.post('/login', function(req,res){
               //match password
               var dbString = result.rows[0].password;
               var salt = dbString.split('$')[2];
-              //Creating a password with salt and submitted password to match it with stored in database
+             //Creating a password with salt and submitted password to match it with stored in database
               var hashedPassword = hash(password, salt); 
               if(hashedPassword === dbString){
                 res.send("User successfully Logged in "); //credentials correct
