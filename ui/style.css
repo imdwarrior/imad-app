@@ -1,6 +1,6 @@
 body {
     font-family: sans-serif;
-    background-color:#def7dc;
+    background-color:#192e38;
     margin-top: 40px;
 }
 
@@ -23,7 +23,7 @@ body {
 .container{
             max-width: 800px;
             margin: 0 auto;
-            color:#192e38;
+            color:#ff0000;
             font-family: san-serrif;
             padding-left: 10px;
             padding-right: 10px;
