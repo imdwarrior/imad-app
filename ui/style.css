@@ -24,7 +24,8 @@ body {
             max-width: 800px;
             margin: 0 auto;
             color:#081af2;
-            font-family: magneto;
+            font-family: 'Tangerine', serif;
+            font-size: 48px;
             padding-left: 10px;
             padding-right: 10px;
         }
