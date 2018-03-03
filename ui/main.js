@@ -16,7 +16,7 @@ request.onreadystatechange = function() {
             alert("Logged in Successfully");
 				}
 			else if(request.status === 403) {
-				alert("Username?Password is incorrect");
+				alert("Username/Password is incorrect");
 			}
 			else if (request.status === 500) {
 				alert("something went wrong");
