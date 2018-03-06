@@ -34,10 +34,10 @@ body {
     background-color: #ddd;
   border: none;
   color: black;
-  padding: 16px 32px;
+  padding: 5px 10px;
   text-align: center;
-  font-size: 14px;
-  margin: 4px 2px;
+  font-size: 12px;
+  margin: 2px 2px;
   transition: 0.3s;
 }
 
